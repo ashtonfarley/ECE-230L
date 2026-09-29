@@ -1,8 +1,8 @@
-# Lab 04 - SOP/POS and KMaps
+# Lab 05 - Combinatorial Logic
 
-In this lab, you’ve learned how to apply KMaps, Sum Of Products and Products of
-sums to simplify digital logic equations. Then, you’ve proven out that they work
-using an implemented design on your Basys3 boards.
+In this lab, you’ve learned real world applications of digital logic, as well
+as how to assemble your own Verilog modules. In addition, you’ve learned how
+the constraints file maps your inputs and outputs to real pins on the FPGA.
 
 ## Rubric
 
@@ -13,24 +13,23 @@ using an implemented design on your Basys3 boards.
 | Question 2 | Your answers to the question | 25% |
 | Question 3 | Your answers to the question | 25% |
 
+## Name
+
 ## Lab Summary
 
-Summarize your learnings from the lab here.
-
-	We learned how to implement a KMap into Verilog, as well as saw the visual representation of the difference in efficiency between the naive and 	minterm files. We then learned how to generate a bitstream to a board based on the truth tables and KMaps we created.
+Learned how to connect 2 circuits to a basys3 board using min and max terms from truth tables.
 
 ## Lab Questions
 
-### Why are the groups of 1’s (or 0’s) that we select in the KMap able to go across edges?
+### 1 - Explain the role of the Top Level file.
 
-	This is because only 1 input is changing, so 10 can go back to 00 and so forth.
+The top file connects the two circuits through a wire that takes on output as another's input.
 
-### Why are the names Sum of Products and Products of Sums?
-  
-        With Sum of Products, we are taking the inputs and anding them together to make minterms, any of which result in a 1 output. For Products of Sums,
-	we are inverting the minterms, meaning that the and's become or's, and or's become and's. (A & B becomes ~A | ~B)
+### 2 - Explain the function of the Constraints file.
 
-### Open the test.v file – how are we able to check that the signals match using XOR?
+The constraint file sets the barriers of which leds and switches need to be used within the circuits.
 
-	With the test file, the ^ symbol represents a XOR gate, meaning that our logic follows XOR logic.
+### 3 - Was the selection of Minterm and Maxterm correct for each circuit? What would you have chosen?
 
+Both the minterms and maxterms were correct for each circuit. Minterms a generally the easier of the two to work with,
+as you don't have to invert the signals and can read the truth table as-is.
